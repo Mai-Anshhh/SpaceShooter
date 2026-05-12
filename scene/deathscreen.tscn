@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dgqckt3q1lxcv"]
+
+[ext_resource type="Script" uid="uid://dslmskkgbgwcr" path="res://scripts/deathscreen.gd" id="1_w7y1o"]
+[ext_resource type="Texture2D" uid="uid://0js7rdwu157k" path="res://Assets/aseprite/1.png" id="1_ypmdv"]
+[ext_resource type="FontFile" uid="uid://cdpxv2gpru84d" path="res://font/PixelOperator8-Bold.ttf" id="2_w7y1o"]
+[ext_resource type="Texture2D" uid="uid://kum1cmb2r528" path="res://Assets/aseprite/Restart.png" id="3_5rk1p"]
+[ext_resource type="Texture2D" uid="uid://c8s8tl8340acs" path="res://Assets/aseprite/Restart_press.png" id="4_thpav"]
+[ext_resource type="Texture2D" uid="uid://dw5qbts5mlibw" path="res://Assets/aseprite/MAIN MENU.png" id="5_floos"]
+[ext_resource type="Texture2D" uid="uid://dbhtoalmeuvvr" path="res://Assets/aseprite/MAIN MENU_press.png" id="6_fxgij"]
+[ext_resource type="Texture2D" uid="uid://dm4oiqc3tdj2c" path="res://Assets/aseprite/quit1.png" id="7_5rk1p"]
+[ext_resource type="Texture2D" uid="uid://btx3i652803ah" path="res://Assets/aseprite/quit_press1.png" id="8_thpav"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e13ij"]
+font = ExtResource("2_w7y1o")
+font_size = 59
+
+[node name="deathscreen" type="Node2D" unique_id=1390212145]
+script = ExtResource("1_w7y1o")
+
+[node name="2" type="Sprite2D" parent="." unique_id=637697426]
+position = Vector2(584.00006, 321)
+scale = Vector2(2.1390376, 2.17554)
+texture = ExtResource("1_ypmdv")
+
+[node name="ButtonManager" type="Control" parent="." unique_id=23132774]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Restart" type="TextureButton" parent="ButtonManager" unique_id=658388311]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.75
+anchor_top = -1.225
+anchor_right = 2.325
+anchor_bottom = 0.525
+offset_left = 574.0
+offset_top = 329.0
+offset_right = 546.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_5rk1p")
+texture_pressed = ExtResource("4_thpav")
+
+[node name="Main Menu" type="TextureButton" parent="ButtonManager" unique_id=628157516]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.8
+anchor_top = -0.15
+anchor_right = 2.5
+anchor_bottom = 1.75
+offset_left = 576.0
+offset_top = 381.0
+offset_right = 539.0
+offset_bottom = 370.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_floos")
+texture_pressed = ExtResource("6_fxgij")
+
+[node name="Quit" type="TextureButton" parent="ButtonManager" unique_id=44100930]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.15
+anchor_top = 1.225
+anchor_right = 2.225
+anchor_bottom = 3.025
+offset_left = 590.0
+offset_top = 427.0
+offset_right = 550.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_5rk1p")
+texture_pressed = ExtResource("8_thpav")
+
+[node name="Label" type="Label" parent="." unique_id=458412264]
+offset_left = 336.0
+offset_top = 168.0
+offset_right = 764.0
+offset_bottom = 228.0
+text = "YOU DIED"
+label_settings = SubResource("LabelSettings_e13ij")
+
+[node name="Timer" type="Timer" parent="." unique_id=1304819101]
+
+[connection signal="pressed" from="ButtonManager/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="ButtonManager/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="ButtonManager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

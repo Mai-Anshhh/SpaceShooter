@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://csmo2wyfw8xyv"]
+
+[ext_resource type="Script" uid="uid://s6hymmp0lhgi" path="res://scripts/explosion.gd" id="1_c5443"]
+[ext_resource type="SpriteFrames" uid="uid://7n7r2itgq3so" path="res://Assets/boom-explosion.gif" id="1_xjdxb"]
+
+[node name="explosion" type="AnimatedSprite2D" unique_id=1513943098]
+scale = Vector2(0.1, 0.1)
+sprite_frames = ExtResource("1_xjdxb")
+animation = &"gif"
+frame = 2
+frame_progress = 0.97702396
+script = ExtResource("1_c5443")

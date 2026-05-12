@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://curmpbcgm1qns"]
+
+[ext_resource type="Script" uid="uid://epl2e7cc5cnc" path="res://scripts/player_move.gd" id="1_hjaqi"]
+[ext_resource type="Texture2D" uid="uid://dx5sbseppfd01" path="res://Assets/ship_player.png" id="1_xo3ru"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
+radius = 5.503982
+
+[node name="Player" type="CharacterBody2D" unique_id=1661868336]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_hjaqi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=977897469]
+texture = ExtResource("1_xo3ru")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=481977828]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_onrkg")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=476872710]
+position = Vector2(0, -6)
+
+[node name="Timer" type="Timer" parent="." unique_id=1176136001]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1201225011]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1452858361]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_hjaqi")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

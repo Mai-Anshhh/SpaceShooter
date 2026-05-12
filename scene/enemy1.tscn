@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://rqdnivebjlth"]
+
+[ext_resource type="Script" uid="uid://dl1etqojx0u2r" path="res://scripts/enemy1.gd" id="1_0t4by"]
+[ext_resource type="Texture2D" uid="uid://cqsxpgvoptp52" path="res://Assets/enemy_v1.png" id="1_fv6j8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0t4by"]
+radius = 5.262748
+
+[node name="enemy1" type="CharacterBody2D" unique_id=735372704 groups=["enemy"]]
+position = Vector2(0, -150)
+collision_mask = 2
+script = ExtResource("1_0t4by")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1557234163]
+texture = ExtResource("1_fv6j8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=750304845]
+shape = SubResource("CircleShape2D_0t4by")
+
+[node name="Timer" type="Timer" parent="." unique_id=165524789]
+
+[node name="bulletpos" type="Marker2D" parent="." unique_id=816665800]
+position = Vector2(0, 5.408777)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1415487248]
+rect = Rect2(-7.0297585, -6.0689316, 14.059517, 12.137863)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

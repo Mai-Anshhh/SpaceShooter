@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://u7tdyxodtpgs"]
+
+[ext_resource type="Script" uid="uid://g71qjssgu21n" path="res://scripts/main_menu.gd" id="1_3er1b"]
+[ext_resource type="Texture2D" uid="uid://cxboonpd5v2lv" path="res://Assets/orig_big.png" id="3_1o50l"]
+[ext_resource type="Texture2D" uid="uid://dx5sbseppfd01" path="res://Assets/ship_player.png" id="3_2fwvj"]
+[ext_resource type="Texture2D" uid="uid://dfqadtm6noehm" path="res://Assets/enemy_v3.png" id="3_hmxu4"]
+[ext_resource type="Texture2D" uid="uid://0js7rdwu157k" path="res://Assets/aseprite/1.png" id="3_os2d6"]
+[ext_resource type="Texture2D" uid="uid://bqrkb6ei3qlrc" path="res://Assets/aseprite/start_press.png" id="4_2atga"]
+[ext_resource type="Texture2D" uid="uid://c4l4pmqq3qyhw" path="res://Assets/aseprite/start_hover.png" id="5_by01r"]
+[ext_resource type="Texture2D" uid="uid://c61inb61dvn4k" path="res://Assets/aseprite/quit_press.png" id="7_hmxu4"]
+[ext_resource type="Texture2D" uid="uid://dsca33xrravsl" path="res://Assets/aseprite/quit_hover.png" id="8_ictww"]
+[ext_resource type="Texture2D" uid="uid://cvjxfammaeakx" path="res://Assets/enemy_v2.png" id="9_ictww"]
+[ext_resource type="Texture2D" uid="uid://cqsxpgvoptp52" path="res://Assets/enemy_v1.png" id="10_1o50l"]
+[ext_resource type="Texture2D" uid="uid://cqous6gy8ghy8" path="res://Assets/enemyballl.png" id="11_ictww"]
+[ext_resource type="PackedScene" uid="uid://da2a2bl2jady8" path="res://scene/fade_transition.tscn" id="13_cht4j"]
+
+[node name="MainMenu" type="Node2D" unique_id=210745437]
+script = ExtResource("1_3er1b")
+
+[node name="2" type="Sprite2D" parent="." unique_id=1754571657]
+visible = false
+position = Vector2(709.00006, 387.00003)
+scale = Vector2(2.5239198, 2.5239189)
+texture = ExtResource("3_os2d6")
+
+[node name="OrigBig" type="Sprite2D" parent="." unique_id=1510386134]
+position = Vector2(576.00006, 323.00003)
+scale = Vector2(0.50617284, 0.5061729)
+texture = ExtResource("3_1o50l")
+
+[node name="button_manager" type="Control" parent="." unique_id=939069704]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="start" type="TextureButton" parent="button_manager" unique_id=1231164475]
+layout_mode = 0
+offset_left = 681.0
+offset_top = 212.0
+offset_right = 1031.0
+offset_bottom = 342.0
+texture_normal = ExtResource("5_by01r")
+texture_pressed = ExtResource("4_2atga")
+
+[node name="quit" type="TextureButton" parent="button_manager" unique_id=2055349779]
+layout_mode = 0
+offset_left = 681.0
+offset_top = 348.0
+offset_right = 1031.0
+offset_bottom = 478.0
+texture_normal = ExtResource("8_ictww")
+texture_pressed = ExtResource("7_hmxu4")
+
+[node name="ShipPlayer" type="Sprite2D" parent="." unique_id=490443108]
+position = Vector2(197.99998, 443)
+rotation = 0.7853982
+scale = Vector2(17.293938, 17.293938)
+texture = ExtResource("3_2fwvj")
+
+[node name="EnemyV1" type="Sprite2D" parent="." unique_id=246144166]
+position = Vector2(485.31372, 57.941128)
+rotation = 0.7853982
+scale = Vector2(2.9999998, 2.9999998)
+texture = ExtResource("10_1o50l")
+
+[node name="EnemyV4" type="Sprite2D" parent="." unique_id=1107169233]
+position = Vector2(594.3138, 164.94118)
+rotation = 0.7853982
+scale = Vector2(2.9999998, 2.9999998)
+texture = ExtResource("10_1o50l")
+
+[node name="EnemyV6" type="Sprite2D" parent="." unique_id=133712138]
+position = Vector2(559.3137, 93.94125)
+rotation = 0.7853982
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("9_ictww")
+
+[node name="Enemyballl3" type="Sprite2D" parent="." unique_id=1143029465]
+position = Vector2(519.3137, 201.94116)
+rotation = -2.3561945
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("11_ictww")
+
+[node name="Enemyballl6" type="Sprite2D" parent="." unique_id=2040003312]
+position = Vector2(564.3138, 195.94107)
+rotation = -2.3561945
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("11_ictww")
+
+[node name="Enemyballl7" type="Sprite2D" parent="." unique_id=245921291]
+position = Vector2(457.31378, 86.94117)
+rotation = -2.3561945
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("11_ictww")
+
+[node name="Enemyballl8" type="Sprite2D" parent="." unique_id=377540956]
+position = Vector2(401.31375, 199.9412)
+rotation = -2.3561945
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("11_ictww")
+
+[node name="Enemyballl9" type="Sprite2D" parent="." unique_id=1153785553]
+position = Vector2(499.31375, 252.9412)
+rotation = -2.3561945
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("11_ictww")
+
+[node name="Enemyballl13" type="Sprite2D" parent="." unique_id=59160243]
+position = Vector2(450.31375, 247.94116)
+rotation = -2.3561945
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("11_ictww")
+
+[node name="Enemyballl15" type="Sprite2D" parent="." unique_id=1362190092]
+position = Vector2(448.31372, 202.9412)
+rotation = -2.3561945
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("11_ictww")
+
+[node name="Enemyballl17" type="Sprite2D" parent="." unique_id=1652850188]
+position = Vector2(390.31372, 146.94116)
+rotation = -2.3561945
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("11_ictww")
+
+[node name="Enemyballl19" type="Sprite2D" parent="." unique_id=1464959560]
+position = Vector2(441.31372, 136.94116)
+rotation = -2.3561945
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("11_ictww")
+
+[node name="EnemyV3" type="Sprite2D" parent="." unique_id=307225029]
+position = Vector2(500.31372, 150.94113)
+rotation = 0.7853982
+scale = Vector2(3.4758627, 3.4758627)
+texture = ExtResource("3_hmxu4")
+
+[node name="Fade_transition" parent="." unique_id=765708264 instance=ExtResource("13_cht4j")]
+visible = false
+
+[node name="Fade_timer" type="Timer" parent="Fade_transition" unique_id=61150427]
+
+[connection signal="pressed" from="button_manager/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="button_manager/quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="Fade_transition/Fade_timer" to="." method="_on_fade_timer_timeout"]

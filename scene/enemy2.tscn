@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://5e2kxbe5ffhv"]
+
+[ext_resource type="Script" uid="uid://cbwbaivc1oaol" path="res://scripts/enemy2.gd" id="1_elmnr"]
+[ext_resource type="Texture2D" uid="uid://cvjxfammaeakx" path="res://Assets/enemy_v2.png" id="2_ohf2b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3m0p6"]
+radius = 4.853466
+height = 13.62571
+
+[node name="enemy2" type="CharacterBody2D" unique_id=735372704 groups=["enemy"]]
+position = Vector2(0, -150)
+script = ExtResource("1_elmnr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1557234163]
+texture = ExtResource("2_ohf2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=750304845]
+shape = SubResource("CapsuleShape2D_3m0p6")
+
+[node name="Timer" type="Timer" parent="." unique_id=165524789]
+
+[node name="bulletpos" type="Marker2D" parent="." unique_id=816665800]
+position = Vector2(0, 5.408777)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1600377179]
+rect = Rect2(-4.956852, -6.9741116, 9.913704, 13.948223)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://6i8l2qxbfaqe"]
+
+[ext_resource type="Script" uid="uid://dqjs6lvhssbmo" path="res://scripts/fireball.gd" id="1_hwcit"]
+[ext_resource type="Texture2D" uid="uid://db2bnfjyjfucg" path="res://Assets/fireballl.png" id="2_hwcit"]
+[ext_resource type="PackedScene" uid="uid://da2a2bl2jady8" path="res://scene/fade_transition.tscn" id="3_hic13"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hwcit"]
+radius = 2.0
+
+[node name="fireball" type="Area2D" unique_id=1333861771]
+script = ExtResource("1_hwcit")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=559037448]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hwcit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1005893454]
+position = Vector2(0, -1.5179291)
+shape = SubResource("CircleShape2D_hwcit")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=739581541]
+rect = Rect2(-2, -3.5581017, 4, 7.0559454)
+
+[node name="Fade_transition" parent="." unique_id=765708264 instance=ExtResource("3_hic13")]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
