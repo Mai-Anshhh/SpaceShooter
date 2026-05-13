@@ -36,14 +36,15 @@ offset_bottom = 40.0
 
 [node name="start" type="TextureButton" parent="button_manager" unique_id=1231164475]
 layout_mode = 0
-offset_left = 681.0
-offset_top = 212.0
-offset_right = 1031.0
-offset_bottom = 342.0
+offset_left = 747.0
+offset_top = 252.0
+offset_right = 1097.0
+offset_bottom = 382.0
 texture_normal = ExtResource("5_by01r")
 texture_pressed = ExtResource("4_2atga")
 
 [node name="quit" type="TextureButton" parent="button_manager" unique_id=2055349779]
+visible = false
 layout_mode = 0
 offset_left = 681.0
 offset_top = 348.0
