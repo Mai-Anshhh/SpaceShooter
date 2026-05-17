@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://epl2e7cc5cnc" path="res://scripts/player_move.gd" id="1_hjaqi"]
 [ext_resource type="Texture2D" uid="uid://dx5sbseppfd01" path="res://Assets/ship_player.png" id="1_xo3ru"]
+[ext_resource type="AudioStream" uid="uid://bcy30xu4acuwn" path="res://music/SFX/sounds/explosions/explode1.wav" id="3_fvtld"]
+[ext_resource type="AudioStream" uid="uid://bmvhquf7i5egx" path="res://music/SFX/sounds/explosions/hit2.wav" id="4_ct4mp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
 radius = 5.0
@@ -33,6 +35,12 @@ position = Vector2(0, -6)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1452858361]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_hjaqi")
+
+[node name="explode1" type="AudioStreamPlayer" parent="." unique_id=710375373]
+stream = ExtResource("3_fvtld")
+
+[node name="hit2" type="AudioStreamPlayer" parent="." unique_id=541058134]
+stream = ExtResource("4_ct4mp")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

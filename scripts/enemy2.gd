@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var hit_3: AudioStreamPlayer = $Hit3
 
 var enemyball = preload("res://scene/enemyball.tscn")
 var can_shoot = false
@@ -16,7 +17,7 @@ func _ready():
 
 func _physics_process(delta):
 	# delete if past screen
-	if position.y > 100:
+	if position.y > 180:
 		queue_free()
 		return
 	if can_shoot:
@@ -38,6 +39,11 @@ func _on_timer_timeout() -> void:
 	
 func take_damage():
 	health -= 1
+	hit_3.play()
 	if health == 0:
+		set_physics_process(false)
+		get_node("Sprite2D").queue_free()
+		get_node("CollisionShape2D").queue_free()
+		await get_tree().create_timer(1).timeout
 		queue_free()
 		emit_signal("enemy_die")

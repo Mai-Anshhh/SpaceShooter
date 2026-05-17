@@ -5,17 +5,22 @@
 [ext_resource type="PackedScene" uid="uid://deyixfym7a4k2" path="res://scene/killzone.tscn" id="3_33cqm"]
 [ext_resource type="PackedScene" uid="uid://da2a2bl2jady8" path="res://scene/fade_transition.tscn" id="4_xwcet"]
 [ext_resource type="FontFile" uid="uid://cdpxv2gpru84d" path="res://font/PixelOperator8-Bold.ttf" id="5_p1ry8"]
+[ext_resource type="PackedScene" uid="uid://coxa8km6akuoj" path="res://scene/pause_menu.tscn" id="6_xlg7c"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xwcet"]
+distance = -50.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dbls1"]
 normal = Vector2(0, 1)
+distance = -51.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_33cqm"]
 normal = Vector2(-1, 0)
+distance = -94.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p1ry8"]
 normal = Vector2(1, 0)
+distance = -96.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_xwcet"]
 font = ExtResource("5_p1ry8")
@@ -34,24 +39,23 @@ zoom = Vector2(4, 4)
 position = Vector2(0, 90)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=2107725891]
-position = Vector2(0, 1)
 shape = SubResource("WorldBoundaryShape2D_xwcet")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone" unique_id=1785295238]
-position = Vector2(0, -182)
+position = Vector2(0, -178)
 shape = SubResource("WorldBoundaryShape2D_dbls1")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Killzone" unique_id=2068468218]
-position = Vector2(154, -90)
+position = Vector2(150, -90)
 shape = SubResource("WorldBoundaryShape2D_33cqm")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Killzone" unique_id=512346642]
-position = Vector2(-153, -90)
+position = Vector2(-149, -90)
 shape = SubResource("WorldBoundaryShape2D_p1ry8")
 
 [node name="spawnline" type="Line2D" parent="." unique_id=2104918799]
-position = Vector2(0, -121)
-points = PackedVector2Array(-122, 8, 115, 8)
+position = Vector2(0, -169)
+points = PackedVector2Array(-199.583, 8, 200.06451, 8)
 
 [node name="Timer" type="Timer" parent="." unique_id=1489111902]
 
@@ -65,6 +69,23 @@ visible = false
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1235065575]
 layer = 5
 follow_viewport_enabled = true
+
+[node name="Highscore" type="Label" parent="CanvasLayer" unique_id=840035175]
+top_level = true
+visibility_layer = 15
+z_index = 5
+anchors_preset = -1
+anchor_left = -0.12100001
+anchor_top = -0.117000006
+anchor_right = -0.12100001
+anchor_bottom = -0.117000006
+offset_left = 0.32000732
+offset_top = 22.360008
+offset_right = 103.32001
+offset_bottom = 32.36001
+text = "Highscore : 0"
+label_settings = SubResource("LabelSettings_xwcet")
+autowrap_mode = 2
 
 [node name="score" type="Label" parent="CanvasLayer" unique_id=1422182043]
 top_level = true
@@ -99,6 +120,9 @@ offset_bottom = 20.816002
 text = "Life : 5"
 label_settings = SubResource("LabelSettings_xwcet")
 autowrap_mode = 2
+
+[node name="PauseMenu" parent="." unique_id=49578373 instance=ExtResource("6_xlg7c")]
+visible = false
 
 [connection signal="player_hit" from="Player" to="." method="_on_player_player_hit"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

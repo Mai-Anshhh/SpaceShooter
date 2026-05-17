@@ -42,7 +42,8 @@ _data = {
 
 [node name="background" type="Sprite2D" unique_id=932499165]
 z_index = -5
-scale = Vector2(0.525, 0.525)
+position = Vector2(-3.0000005, -57.000008)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_jirmm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=727744762]

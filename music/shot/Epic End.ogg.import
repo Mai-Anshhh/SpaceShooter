@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bqdqgt84mdolt"
+path="res://.godot/imported/Epic End.ogg-db57f5a967dbd753380e437c6b2466b2.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/shot/Epic End.ogg"
+dest_files=["res://.godot/imported/Epic End.ogg-db57f5a967dbd753380e437c6b2466b2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

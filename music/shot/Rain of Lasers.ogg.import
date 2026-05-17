@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b57t102x81ist"
+path="res://.godot/imported/Rain of Lasers.ogg-018819ae791cb7acde865b8fea6e3959.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/shot/Rain of Lasers.ogg"
+dest_files=["res://.godot/imported/Rain of Lasers.ogg-018819ae791cb7acde865b8fea6e3959.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

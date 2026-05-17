@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dl1etqojx0u2r" path="res://scripts/enemy1.gd" id="1_0t4by"]
 [ext_resource type="Texture2D" uid="uid://cqsxpgvoptp52" path="res://Assets/enemy_v1.png" id="1_fv6j8"]
+[ext_resource type="AudioStream" uid="uid://m28vsdko13hk" path="res://music/SFX/sounds/explosions/hit3.wav" id="3_aqd53"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0t4by"]
 radius = 5.262748
@@ -24,5 +25,8 @@ position = Vector2(0, 5.408777)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1415487248]
 rect = Rect2(-7.0297585, -6.0689316, 14.059517, 12.137863)
+
+[node name="Hit3" type="AudioStreamPlayer" parent="." unique_id=460901108]
+stream = ExtResource("3_aqd53")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

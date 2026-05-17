@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dg5wyjdmneu57"
+path="res://.godot/imported/Between The Dunes.wav-ad633f4d24c413da37972f6acf9812f7.sample"
+
+[deps]
+
+source_file="res://music/Between The Dunes.wav"
+dest_files=["res://.godot/imported/Between The Dunes.wav-ad633f4d24c413da37972f6acf9812f7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

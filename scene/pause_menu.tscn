@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://coxa8km6akuoj"]
+
+[ext_resource type="Script" uid="uid://3upc811radif" path="res://scripts/pause_menu.gd" id="1_grdc7"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=49578373]
+process_mode = 3
+script = ExtResource("1_grdc7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=858218925]
+offset_right = 1922.8492
+offset_bottom = 1084.0
+color = Color(0, 0, 0, 0.43529412)
+metadata/_edit_use_anchors_ = true
+
+[node name="Resume" type="Button" parent="." unique_id=1439940723]
+offset_left = 818.0
+offset_top = 379.0
+offset_right = 1135.0
+offset_bottom = 497.0
+theme_override_font_sizes/font_size = 80
+text = "Resume"
+metadata/_edit_use_anchors_ = true
+
+[node name="Main Menu" type="Button" parent="." unique_id=1654022472]
+offset_left = 752.0
+offset_top = 573.0
+offset_right = 1195.0
+offset_bottom = 691.0
+theme_override_font_sizes/font_size = 80
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]

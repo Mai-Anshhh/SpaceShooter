@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cbwbaivc1oaol" path="res://scripts/enemy2.gd" id="1_elmnr"]
 [ext_resource type="Texture2D" uid="uid://cvjxfammaeakx" path="res://Assets/enemy_v2.png" id="2_ohf2b"]
+[ext_resource type="AudioStream" uid="uid://m28vsdko13hk" path="res://music/SFX/sounds/explosions/hit3.wav" id="3_ohf2b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3m0p6"]
 radius = 4.853466
@@ -24,6 +25,9 @@ position = Vector2(0, 5.408777)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1600377179]
 rect = Rect2(-4.956852, -6.9741116, 9.913704, 13.948223)
+
+[node name="Hit3" type="AudioStreamPlayer" parent="." unique_id=332685867]
+stream = ExtResource("3_ohf2b")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

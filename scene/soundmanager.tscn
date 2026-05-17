@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c2ryhjxhvp85d"]
+
+[ext_resource type="Script" uid="uid://bis55dsbjnwgy" path="res://scripts/soundmanager.gd" id="1_h5ghv"]
+[ext_resource type="AudioStream" uid="uid://gppv8jvgm2yg" path="res://music/SFX/sounds/buttonselect/1.wav" id="2_cv3im"]
+[ext_resource type="AudioStream" uid="uid://dabqm7p7asv8b" path="res://music/SFX/sounds/buttonselect/7.wav" id="3_tvx8m"]
+[ext_resource type="AudioStream" uid="uid://bcy30xu4acuwn" path="res://music/SFX/sounds/explosions/explode1.wav" id="4_uci84"]
+[ext_resource type="AudioStream" uid="uid://bmvhquf7i5egx" path="res://music/SFX/sounds/explosions/hit2.wav" id="5_o6nfe"]
+[ext_resource type="AudioStream" uid="uid://m28vsdko13hk" path="res://music/SFX/sounds/explosions/hit3.wav" id="6_vhc8j"]
+[ext_resource type="AudioStream" uid="uid://cacqkfe0x8851" path="res://music/shot/Space Heroes.ogg" id="7_h5ghv"]
+
+[node name="soundmanager" type="Node2D" unique_id=76417414]
+script = ExtResource("1_h5ghv")
+
+[node name="startb" type="AudioStreamPlayer" parent="." unique_id=1199429415]
+stream = ExtResource("2_cv3im")
+bus = &"sfx"
+
+[node name="quitb" type="AudioStreamPlayer" parent="." unique_id=1608298745]
+stream = ExtResource("3_tvx8m")
+bus = &"sfx"
+
+[node name="Explode1" type="AudioStreamPlayer" parent="." unique_id=1576072562]
+stream = ExtResource("4_uci84")
+bus = &"sfx"
+
+[node name="Hit2" type="AudioStreamPlayer" parent="." unique_id=897012462]
+stream = ExtResource("5_o6nfe")
+bus = &"sfx"
+
+[node name="Hit3" type="AudioStreamPlayer" parent="." unique_id=1821874258]
+stream = ExtResource("6_vhc8j")
+bus = &"sfx"
+
+[node name="SpaceHeroes" type="AudioStreamPlayer" parent="." unique_id=1382306065]
+stream = ExtResource("7_h5ghv")
+autoplay = true
+bus = &"bg"
+parameters/looping = true

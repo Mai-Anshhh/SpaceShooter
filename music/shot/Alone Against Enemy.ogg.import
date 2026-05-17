@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://h4dy4glk6n3n"
+path="res://.godot/imported/Alone Against Enemy.ogg-ee31485d30fefe65cbe95fc542e0dacb.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/shot/Alone Against Enemy.ogg"
+dest_files=["res://.godot/imported/Alone Against Enemy.ogg-ee31485d30fefe65cbe95fc542e0dacb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

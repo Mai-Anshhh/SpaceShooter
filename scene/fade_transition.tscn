@@ -54,8 +54,8 @@ _data = {
 
 [node name="Fade_transition" type="ColorRect" unique_id=765708264]
 modulate = Color(1, 1, 1, 0)
-offset_right = 1160.0
-offset_bottom = 658.0
+offset_right = 1928.6322
+offset_bottom = 1094.0
 color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=427134781]

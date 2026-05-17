@@ -4,7 +4,7 @@ var speed = 200
 
 func _physics_process(delta):
 	# delete if past screen
-	if position.y > 100:
+	if position.y > 180:
 		queue_free()
 		return
 	position.y += speed * delta
@@ -19,5 +19,4 @@ func _on_body_entered(body):
 		explosion.global_position = global_position
 		set_process(false)
 		body.take_damage()
-		#await get_tree().create_timer(0.2).timeout
 		queue_free()

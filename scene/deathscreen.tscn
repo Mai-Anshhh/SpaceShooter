@@ -6,18 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://kum1cmb2r528" path="res://Assets/aseprite/Restart.png" id="3_5rk1p"]
 [ext_resource type="Texture2D" uid="uid://c8s8tl8340acs" path="res://Assets/aseprite/Restart_press.png" id="4_thpav"]
 [ext_resource type="Texture2D" uid="uid://dm4oiqc3tdj2c" path="res://Assets/aseprite/quit1.png" id="7_5rk1p"]
+[ext_resource type="AudioStream" uid="uid://gppv8jvgm2yg" path="res://music/SFX/sounds/buttonselect/1.wav" id="8_5rk1p"]
 [ext_resource type="Texture2D" uid="uid://btx3i652803ah" path="res://Assets/aseprite/quit_press1.png" id="8_thpav"]
+[ext_resource type="AudioStream" uid="uid://dabqm7p7asv8b" path="res://music/SFX/sounds/buttonselect/7.wav" id="9_thpav"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e13ij"]
 font = ExtResource("2_w7y1o")
-font_size = 59
+font_size = 100
 
 [node name="deathscreen" type="Node2D" unique_id=1390212145]
 script = ExtResource("1_w7y1o")
 
 [node name="2" type="Sprite2D" parent="." unique_id=637697426]
-position = Vector2(584.00006, 321)
-scale = Vector2(2.1390376, 2.17554)
+position = Vector2(959.5001, 538.5086)
+scale = Vector2(3.3732646, 3.4502847)
 texture = ExtResource("1_ypmdv")
 
 [node name="ButtonManager" type="Control" parent="." unique_id=23132774]
@@ -33,10 +35,10 @@ anchor_left = -2.75
 anchor_top = -1.225
 anchor_right = 2.325
 anchor_bottom = 0.525
-offset_left = 582.0
-offset_top = 369.0
-offset_right = 554.0
-offset_bottom = 364.0
+offset_left = 966.0
+offset_top = 593.0
+offset_right = 938.0
+offset_bottom = 588.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("3_5rk1p")
@@ -49,10 +51,10 @@ anchor_left = -2.8
 anchor_top = -0.15
 anchor_right = 2.5
 anchor_bottom = 1.75
-offset_left = 584.0
-offset_top = 430.0
-offset_right = 547.0
-offset_bottom = 419.0
+offset_left = 968.0
+offset_top = 686.0
+offset_right = 931.0
+offset_bottom = 675.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("7_5rk1p")
@@ -76,14 +78,20 @@ texture_normal = ExtResource("7_5rk1p")
 texture_pressed = ExtResource("8_thpav")
 
 [node name="Label" type="Label" parent="." unique_id=458412264]
-offset_left = 336.0
-offset_top = 168.0
-offset_right = 764.0
-offset_bottom = 228.0
+offset_left = 536.0
+offset_top = 288.0
+offset_right = 1406.0
+offset_bottom = 408.0
 text = "YOU DIED"
 label_settings = SubResource("LabelSettings_e13ij")
 
 [node name="Timer" type="Timer" parent="." unique_id=1304819101]
+
+[node name="1" type="AudioStreamPlayer" parent="." unique_id=794640003]
+stream = ExtResource("8_5rk1p")
+
+[node name="7" type="AudioStreamPlayer" parent="." unique_id=1036517638]
+stream = ExtResource("9_thpav")
 
 [connection signal="pressed" from="ButtonManager/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="ButtonManager/Main Menu" to="." method="_on_main_menu_pressed"]
