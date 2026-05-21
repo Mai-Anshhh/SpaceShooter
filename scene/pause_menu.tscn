@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://coxa8km6akuoj"]
 
 [ext_resource type="Script" uid="uid://3upc811radif" path="res://scripts/pause_menu.gd" id="1_grdc7"]
+[ext_resource type="AudioStream" uid="uid://gppv8jvgm2yg" path="res://music/SFX/sounds/buttonselect/1.wav" id="2_cq4tv"]
+[ext_resource type="AudioStream" uid="uid://dabqm7p7asv8b" path="res://music/SFX/sounds/buttonselect/7.wav" id="3_ug2vv"]
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=49578373]
 process_mode = 3
@@ -29,6 +31,12 @@ offset_bottom = 691.0
 theme_override_font_sizes/font_size = 80
 text = "Main Menu"
 metadata/_edit_use_anchors_ = true
+
+[node name="start" type="AudioStreamPlayer" parent="." unique_id=2011470708]
+stream = ExtResource("2_cq4tv")
+
+[node name="quit" type="AudioStreamPlayer" parent="." unique_id=531268080]
+stream = ExtResource("3_ug2vv")
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]

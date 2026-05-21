@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+@onready var start: AudioStreamPlayer = $start
+@onready var quit: AudioStreamPlayer = $quit
+
 func _ready() -> void:
 	visible = false
 	get_tree().paused = false
@@ -14,11 +17,13 @@ func _input(_event: InputEvent) -> void:
 			get_tree().paused = true
 
 func _on_resume_pressed() -> void:
+	start.play()
 	visible = false
 	get_tree().paused = false
 
 
 func _on_main_menu_pressed() -> void:
+	quit.play()
 	visible = false
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scene/main_menu.tscn")

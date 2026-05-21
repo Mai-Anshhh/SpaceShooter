@@ -22,16 +22,21 @@ func _physics_process(delta):
 		return
 	if can_shoot:
 		shoot()
-		$Timer.start(randi() % 4 + 1)
+		$Timer.start(randi() % 2 + 1)
 		can_shoot = false
 
 	velocity.y = 1500 * delta
 	move_and_slide()
 
 func shoot():
-	var inst = enemyball.instantiate()
-	get_parent().add_child(inst)
-	inst.global_position = $bulletpos.global_position
+	var bullets = [
+		[$bulletpos.global_position, Vector2.DOWN.rotated(deg_to_rad(-20))],
+		[$bulletpos2.global_position, Vector2.DOWN.rotated(deg_to_rad(20))]
+	]
+	for bullet in bullets:
+		var inst = enemyball.instantiate()
+		get_parent().add_child(inst)
+		inst.setup(bullet[0], bullet[1])
 
 func _on_timer_timeout() -> void:
 	can_shoot = true
@@ -39,6 +44,7 @@ func _on_timer_timeout() -> void:
 	
 func take_damage():
 	health -= 1
+	$Hit3.pitch_scale = randf_range(0.6, 1.1)
 	hit_3.play()
 	if health == 0:
 		set_physics_process(false)

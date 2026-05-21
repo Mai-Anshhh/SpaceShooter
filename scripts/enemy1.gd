@@ -32,7 +32,7 @@ func _physics_process(delta):
 func shoot():
 	var inst = enemyball.instantiate()
 	get_parent().add_child(inst)
-	inst.global_position = $bulletpos.global_position
+	inst.setup($bulletpos.global_position, Vector2.DOWN)
 
 func _on_timer_timeout() -> void:
 	can_shoot = true
@@ -40,6 +40,7 @@ func _on_timer_timeout() -> void:
 	
 func take_damage():
 	health -= 1
+	$Hit3.pitch_scale = randf_range(0.6, 1.1)
 	hit_3.play()
 	if health == 0:
 		set_physics_process(false)

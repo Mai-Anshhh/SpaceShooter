@@ -38,6 +38,7 @@ func _on_timer_timeout() -> void:
 
 func take_damage():
 	health -= 1
+	$hit2.pitch_scale = randf_range(0.6, 1.1)
 	hit_2.play()
 	emit_signal("player_hit", health)
 	if health == 0:

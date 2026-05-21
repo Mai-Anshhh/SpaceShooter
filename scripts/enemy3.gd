@@ -29,9 +29,12 @@ func _physics_process(delta):
 	move_and_slide()
 
 func shoot():
-	var inst = enemyball.instantiate()
-	get_parent().add_child(inst)
-	inst.global_position = $bulletpos.global_position
+	var spread_angles = [-25, 0, 25]
+	for angle_deg in spread_angles:
+		var inst = enemyball.instantiate()
+		var dir = Vector2.DOWN.rotated(deg_to_rad(angle_deg))
+		inst.setup($bulletpos.global_position, dir)
+		get_parent().add_child(inst)
 
 func _on_timer_timeout() -> void:
 	can_shoot = true
@@ -39,6 +42,7 @@ func _on_timer_timeout() -> void:
 	
 func take_damage():
 	health -= 1
+	$Hit3.pitch_scale = randf_range(0.6, 1.1)
 	hit_3.play()
 	if health == 0:
 		set_physics_process(false)

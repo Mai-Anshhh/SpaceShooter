@@ -23,6 +23,9 @@ shape = SubResource("CapsuleShape2D_3m0p6")
 [node name="bulletpos" type="Marker2D" parent="." unique_id=816665800]
 position = Vector2(0, 5.408777)
 
+[node name="bulletpos2" type="Marker2D" parent="." unique_id=2013551535]
+position = Vector2(0, 5.408777)
+
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1600377179]
 rect = Rect2(-4.956852, -6.9741116, 9.913704, 13.948223)
 
