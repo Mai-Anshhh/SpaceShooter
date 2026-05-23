@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cvjxfammaeakx" path="res://Assets/enemy_v2.png" id="9_ictww"]
 [ext_resource type="Texture2D" uid="uid://cqsxpgvoptp52" path="res://Assets/enemy_v1.png" id="10_1o50l"]
 [ext_resource type="Texture2D" uid="uid://cqous6gy8ghy8" path="res://Assets/enemyballl.png" id="11_ictww"]
+[ext_resource type="FontFile" uid="uid://2fwyao46t8ch" path="res://font/PixelOperator8.ttf" id="12_v0h3m"]
 [ext_resource type="PackedScene" uid="uid://da2a2bl2jady8" path="res://scene/fade_transition.tscn" id="13_cht4j"]
 [ext_resource type="AudioStream" uid="uid://gppv8jvgm2yg" path="res://music/SFX/sounds/buttonselect/1.wav" id="13_os2d6"]
 [ext_resource type="AudioStream" uid="uid://dabqm7p7asv8b" path="res://music/SFX/sounds/buttonselect/7.wav" id="14_v0h3m"]
@@ -131,6 +132,15 @@ position = Vector2(757.3137, 364.4412)
 rotation = 0.7853982
 scale = Vector2(6.812525, 6.812525)
 texture = ExtResource("3_hmxu4")
+
+[node name="HighScore" type="Label" parent="." unique_id=1942046842]
+offset_left = 1491.0
+offset_top = 604.0
+offset_right = 1673.0
+offset_bottom = 643.0
+theme_override_fonts/font = ExtResource("12_v0h3m")
+theme_override_font_sizes/font_size = 28
+text = "Best: 0"
 
 [node name="Fade_transition" parent="." unique_id=765708264 instance=ExtResource("13_cht4j")]
 visible = false

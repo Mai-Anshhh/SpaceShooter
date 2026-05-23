@@ -3,6 +3,10 @@ extends Node2D
 var button_type = null
 @onready var _1: AudioStreamPlayer = $"1"
 
+func _ready() -> void:
+	Global.load_highscore()
+	update_ui()
+
 func _on_start_pressed() -> void:
 	button_type = "start"
 	_1.play()
@@ -13,7 +17,9 @@ func _on_start_pressed() -> void:
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
-
 func _on_fade_timer_timeout() -> void:
 	if button_type == "start" :
 		get_tree().change_scene_to_file("res://scene/game.tscn")
+
+func update_ui():
+		$HighScore.text = "Best: " + str(Global.highscore)

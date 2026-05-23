@@ -4,6 +4,11 @@ var button_type = null
 @onready var _1: AudioStreamPlayer = $"1"
 @onready var _7: AudioStreamPlayer = $"7"
 
+func _ready() -> void:
+	Global.load_highscore()
+	update_ui()
+
+
 func _on_restart_pressed() -> void:
 	button_type = "Restart"
 	$Timer.start(0.1)
@@ -26,3 +31,7 @@ func _on_timer_timeout() -> void:
 	
 	if button_type == "Main Menu" :
 		get_tree().change_scene_to_file("res://scene/main_menu.tscn")
+		
+
+func update_ui():
+	$Highscore.text = "Best: " + str(Global.highscore)
